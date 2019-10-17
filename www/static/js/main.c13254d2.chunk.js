@@ -1,0 +1,2 @@
+(this.webpackJsonphelloworld=this.webpackJsonphelloworld||[]).push([[0],[,,,function(e,n,o){e.exports=o(4)},function(e,n,o){"use strict";o.r(n);var t=o(0),l=o.n(t),r=o(2);o.n(r).a.render(l.a.createElement("div",null,"Hello am khazi"),document.getElementById("root"))}],[[3,1,2]]]);
+//# sourceMappingURL=main.c13254d2.chunk.js.map
