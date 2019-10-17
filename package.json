@@ -1,15 +1,71 @@
 {
-    "name": "helloworld",
-    "displayName": "HelloCordova",
-    "version": "1.0.0",
-    "description": "A sample Apache Cordova application that responds to the deviceready event.",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "ecosystem:cordova"
+  "name": "helloworld",
+  "displayName": "HelloCordova",
+  "version": "1.0.0",
+  "homepage": "./",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:cordova": "npm run remove:www && react-scripts build && node scripts/www.js && mv build www",
+    "platform:add:all": "npm run platform:browser && npm run platform:electron && npm run platform:android &&  npm run platform:ios",
+    "platform:browser": "cordova platform add browser",
+    "platform:electron": "cordova platform add electron",
+    "platform:android": "cordova platform add android",
+    "platform:ios": "cordova platform add ios",
+    "build:all": "npm run build:electron && npm run build:android && npm run build:ios",
+    "build:electron": "cordova build electron",
+    "build:android": "cordova build android",
+    "build:ios": "cordova build ios",
+    "start:browser": "react-scripts start",
+    "start:electron": "cordova run electron",
+    "start:electron:nobuild": "cordova run electron --nobuild",
+    "start:android": "cordova emulate android",
+    "run:ios": "cordova run ios",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "remove:www": "rm -rf www"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cordova-android": "^8.1.0",
+    "cordova-browser": "^6.0.0",
+    "cordova-electron": "^1.1.1",
+    "cordova-ios": "^5.0.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "^3.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
-    "author": "Apache Cordova Team",
-    "license": "Apache-2.0"
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cordova-plugin-whitelist": "^1.3.4",
+    "electron-builder": "^21.2.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {}
+    },
+    "platforms": [
+      "browser",
+      "electron",
+      "android",
+      "ios"
+    ]
+  }
 }
